@@ -1,0 +1,34 @@
+#banner {
+	min-width: 100%;
+	max-width: 100%;
+}
+
+#desc {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#desc > div {
+	border: solid #ac2432;
+	border-radius: 15px;
+	margin: 20px;
+	height: 250px;
+	max-width: 500px;
+	padding: 30px;
+}
+
+#desc > div > h4 {
+	color: #ac2432;
+}
+
+#desc > div > p {
+	color: gray;
+}
+
+@media screen and (max-width: 1000px) {
+	#desc {
+		flex-wrap: wrap;
+	}
+}

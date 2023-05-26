@@ -1,0 +1,30 @@
+.nava {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: solid rgb(199, 199, 199) 1px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.nava > a {
+  color: #ac2432;
+  border-bottom: solid transparent 5px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.nava > a:hover {
+  color: #ac2432;
+  border-bottom: #ac2432 solid 5px;
+  transition: border-bottom 0.8s;
+}
+
+.userProfileImage {
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid;
+  border-color: #ac243228;
+  padding: 0;
+}

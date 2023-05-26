@@ -1,0 +1,33 @@
+body {
+	margin: 0;
+	font-family: "Open Sans";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+/*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;*/
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+* {
+	font-family: "Open Sans";
+}
+
+.redButton .btn-secondary:disabled {
+	filter: grayscale(100%);
+}
+.redButton .btn-secondary {
+	padding: 8px 10px;
+	background-color: #ac2432 !important;
+	border: solid 1px #ac2432 !important;
+	color: rgb(182, 182, 182) !important;
+}
+
+.redButton .btn-secondary:hover {
+	background-color: #ac2432 !important;
+	border: solid 1px #ac2432 !important;
+	color: white !important;
+}

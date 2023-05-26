@@ -1,0 +1,10 @@
+.colorBtn {
+	border: #ac2432 1px solid !important;
+	padding: 10px 12px;
+	margin: 3px 5px;
+}
+
+.colorBtn:hover {
+	color: white !important;
+	transition: 0.8s;
+}

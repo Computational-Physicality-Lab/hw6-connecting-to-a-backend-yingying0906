@@ -1,0 +1,13 @@
+.addToCartLink {
+	padding: 8px 10px;
+	background-color: #ac2432 !important;
+	border: solid 1px #ac2432 !important;
+	color: rgb(182, 182, 182) !important;
+}
+
+.addToCartLink:hover {
+	transition: 0.8s;
+	background-color: #ac2432 !important;
+	border: solid 1px #ac2432 !important;
+	color: white !important;
+}

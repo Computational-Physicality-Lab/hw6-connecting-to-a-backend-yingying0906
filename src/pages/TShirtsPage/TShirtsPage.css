@@ -1,0 +1,24 @@
+.TPage {
+	margin: 30px;
+}
+.TPage > h2 {
+	font-weight: bold;
+}
+
+.Tflex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.Tflex button {
+	background-color: #ac2432;
+	color: rgb(199, 199, 199);
+	border: none;
+}
+.Tflex button:hover {
+	background-color: #ac2432;
+	color: white;
+}

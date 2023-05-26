@@ -1,0 +1,22 @@
+/* order*/
+.Order-Container {
+	width: 30vw;
+	border: solid #ac2432 2px;
+	border-radius: 10px;
+	padding: 5%;
+	margin: 5% 0%;
+}
+
+.orderSumSeperate {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.orderSumSeperate > h6 {
+	color: gray;
+}
+
+.orderSumSeperate > h6:nth-child(2) {
+	color: #ac2432;
+}
