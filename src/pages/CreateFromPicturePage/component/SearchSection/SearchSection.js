@@ -79,7 +79,7 @@ const SearchSection = (props) => {
 
   React.useEffect(() => {
     scrollToBottom();
-  });
+  }, [searchResults]);
 
   const scrollToBottom = () => {
     if (scrollableRef.current) {
