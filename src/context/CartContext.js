@@ -10,6 +10,7 @@ import {
   deleteDoc,
   getDocs,
   onSnapshot,
+  serverTimestamp,
 } from "firebase/firestore";
 
 export const CartContext = createContext();
@@ -20,23 +21,47 @@ export const CartProvider = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const { authUser } = useContext(AuthUserContext);
 
-  const addToCart = async (uid, productState) => {
-    const { name, id, color, selSize, selQty, price } = productState;
-    const cartItem = {
-      name: name,
-      id: id,
-      color: color,
-      size: selSize,
-      qty: selQty,
-      price: price,
-    };
+  const addToCart = async (uid, productState, type) => {
+    if (type === "picture") {
+      const { name, id, selSize, selQty, price, img, type } = productState;
+      const cartItem = {
+        type: type,
+        name: name,
+        id: id,
+        size: selSize,
+        qty: selQty,
+        price: price,
+        img: img,
+        timestamp: serverTimestamp(),
+      };
 
-    try {
-      const userCartCollection = collection(firestore, "users", uid, "cart");
-      await addDoc(userCartCollection, cartItem);
-      console.log("add cart");
-    } catch (error) {
-      console.error("Error adding cart item: ", error);
+      try {
+        const userCartCollection = collection(firestore, "users", uid, "cart");
+        await addDoc(userCartCollection, cartItem);
+        console.log("add cart");
+      } catch (error) {
+        console.error("Error adding cart item: ", error);
+      }
+    } else if (type === "product") {
+      const { name, id, color, selSize, selQty, price, type } = productState;
+      const cartItem = {
+        type: type,
+        name: name,
+        id: id,
+        color: color,
+        size: selSize,
+        qty: selQty,
+        price: price,
+        timestamp: serverTimestamp(),
+      };
+
+      try {
+        const userCartCollection = collection(firestore, "users", uid, "cart");
+        await addDoc(userCartCollection, cartItem);
+        console.log("add cart");
+      } catch (error) {
+        console.error("Error adding cart item: ", error);
+      }
     }
   };
 

@@ -11,6 +11,7 @@ import CartPage from "./pages/CartPage/CartPage";
 import NotFound from "./pages/NotFound/NotFound";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import AccountPage from "./pages/AccountPage/AccountPage";
+import CreateFromPicturePage from "./pages/CreateFromPicturePage/CreateFromPicturePage";
 
 function App() {
   return (
@@ -25,6 +26,11 @@ function App() {
         <Route path="/not-found" element={<NotFound />} />
         <Route path="/product/:name/:id" element={<ProductPage />} />
         <Route path="/account" element={<AccountPage />} />
+        <Route
+          path="/create-from-picture"
+          element={<CreateFromPicturePage />}
+        />
+        <Route path="/create-your-own" element={<NotFound />} />
       </Routes>
 
       <Footer />

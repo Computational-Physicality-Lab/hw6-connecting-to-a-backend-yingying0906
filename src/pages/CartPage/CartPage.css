@@ -1,23 +1,23 @@
 .Cart-Page {
-	margin-left: 4%;
-	margin-right: 4%;
-	margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
 }
 
 .Cart-title {
-	margin-bottom: 15px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .Cart-Content {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .remove-all {
-	width: 30vw;
+  width: 30vw;
 }

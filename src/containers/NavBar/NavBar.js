@@ -13,8 +13,8 @@ const NavBar = (props) => {
     <div>
       <Nav className="nava">
         <Link to="/t-shirts">T-SHIRTS</Link>
-        <Link to="/not-found">HOODIES</Link>
-        <Link to="/not-found">CREATE YOUR OWN</Link>
+        <Link to="/create-from-picture">CREATE FROM PICTURE</Link>
+        <Link to="/create-your-own">CREATE YOUR OWN</Link>
         <Link to="/not-found">ABOUT US</Link>
 
         <Link to="/account">

@@ -1,0 +1,28 @@
+.customSizeDrop {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+.customSizeDrop > div {
+	margin: 0;
+}
+
+.customSizeDrop .btn-secondary {
+	margin: 0;
+	margin-left: 5px;
+	background-color: white;
+	color: black;
+	border: #ac2432 solid 1px;
+}
+
+.customSizeDrop .btn-secondary:hover {
+	background-color: white;
+	color: black;
+	border: #ac2432 solid 1px;
+}
+
+.QuantityDrop {
+	max-height: 400px;
+	overflow-y: scroll;
+}

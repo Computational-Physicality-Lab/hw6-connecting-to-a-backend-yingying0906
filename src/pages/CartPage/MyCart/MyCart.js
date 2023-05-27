@@ -7,13 +7,17 @@ import "./MyCart.css";
 
 const CartRender = (prop) => {
   const { cartState } = useContext(CartContext);
-  console.log(cartState);
-  const CartArr = cartState.slice(0).map((item, index) => {
-    return <CartItem key={index} data={item} />;
+
+  const sortedCart = cartState
+    .slice(0)
+    .sort((a, b) => b.timestamp - a.timestamp);
+
+  const CartArr = sortedCart.map((item, index) => {
+    return <CartItem key={index} data={item} types={item.type} />;
   });
+
   return CartArr;
 };
-
 const MyCart = (props) => {
   const { totalQuantity } = useContext(CartContext);
   return (

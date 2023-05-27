@@ -1,14 +1,15 @@
 import { useContext } from "react";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../../context/CartContext";
-import { ProductContext } from "../../../context/ProductContext";
-import { AuthUserContext } from "../../../context/AuthUserContext";
+import { CartContext } from "../../../../context/CartContext";
+import { PictureProductContext } from "../../../../context/PictureProductContext";
 
-import "./AddCartBtn.css";
+import { AuthUserContext } from "../../../../context/AuthUserContext";
 
 const AddCartBtn = () => {
-  const { productState } = useContext(ProductContext);
+  const { pictureProductState, currentChoose } = useContext(
+    PictureProductContext
+  );
   const { addToCart } = useContext(CartContext);
   const { authUser } = useContext(AuthUserContext);
 
@@ -16,13 +17,14 @@ const AddCartBtn = () => {
     <div className="redButton">
       <Button
         disabled={
-          !productState.canAddCart ||
-          productState.price === "" ||
-          productState.price === null ||
-          authUser === null
+          !pictureProductState.canAddCart ||
+          pictureProductState.price === "" ||
+          pictureProductState.price === null ||
+          authUser === null ||
+          currentChoose === null
         }
         onClick={(e) => {
-          addToCart(authUser.uid, productState, "product");
+          addToCart(authUser.uid, pictureProductState, "picture");
         }}
       >
         <Link

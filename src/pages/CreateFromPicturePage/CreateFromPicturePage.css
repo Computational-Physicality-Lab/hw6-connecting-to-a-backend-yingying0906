@@ -1,0 +1,7 @@
+.CreateFromPicturePage {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 5vw;
+}

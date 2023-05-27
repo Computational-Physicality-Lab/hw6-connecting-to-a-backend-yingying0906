@@ -7,7 +7,7 @@ import {
 } from "reactstrap";
 import "./SizeList.css";
 import { useContext } from "react";
-import { ProductContext } from "../../../context/ProductContext";
+import { PictureProductContext } from "../../../../context/PictureProductContext";
 
 const allSize = [
   "Size",
@@ -26,9 +26,11 @@ const allSize = [
 ];
 
 const SizeList = () => {
-  const { productState, setProductState } = useContext(ProductContext);
+  const { pictureProductState, setPictureProductState } = useContext(
+    PictureProductContext
+  );
   const toggleSize = () => {
-    setProductState((prevState) => ({
+    setPictureProductState((prevState) => ({
       ...prevState,
       openSize: !prevState.openSize,
     }));
@@ -36,14 +38,14 @@ const SizeList = () => {
 
   const handleSizeItem = (num) => {
     if (parseInt(num) !== 0) {
-      setProductState({
-        ...productState,
+      setPictureProductState({
+        ...pictureProductState,
         selSize: allSize[num],
         canAddCart: true,
       });
     } else {
-      setProductState({
-        ...productState,
+      setPictureProductState({
+        ...pictureProductState,
         canAddCart: false,
       });
     }
@@ -69,10 +71,10 @@ const SizeList = () => {
       Size:
       <Dropdown
         direction="up"
-        isOpen={productState.openSize}
+        isOpen={pictureProductState.openSize}
         toggle={toggleSize}
       >
-        <DropdownToggle caret>{productState.selSize}</DropdownToggle>
+        <DropdownToggle caret>{pictureProductState.selSize}</DropdownToggle>
         <DropdownMenu className="QuantityDrop">
           <DropMenu />
         </DropdownMenu>

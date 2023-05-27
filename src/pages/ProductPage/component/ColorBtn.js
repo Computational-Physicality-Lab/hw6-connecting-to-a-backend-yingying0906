@@ -6,30 +6,30 @@ import { ProductContext } from "../../../context/ProductContext";
 import "./ColorBtn.css";
 
 const ColorBtn = ({ target }) => {
-	const { productState, setProductState } = useContext(ProductContext);
+  const { productState, setProductState } = useContext(ProductContext);
 
-	const handleColorBtn = (color) => {
-		setProductState({ ...productState, color });
-	};
+  const handleColorBtn = (color) => {
+    setProductState({ ...productState, color });
+  };
 
-	const colorButtons = Object.keys(target.colors).map((clr) => (
-		<Button
-			key={clr}
-			id={clr}
-			className="colorBtn"
-			style={{ backgroundColor: clr, color: "black" }}
-			onClick={(e) => handleColorBtn(e.target.id)}
-		>
-			{clr}
-		</Button>
-	));
+  const colorButtons = Object.keys(target.colors).map((clr) => (
+    <Button
+      key={clr}
+      id={clr}
+      className="colorBtn"
+      style={{ backgroundColor: clr, color: "black" }}
+      onClick={(e) => handleColorBtn(e.target.id)}
+    >
+      {clr}
+    </Button>
+  ));
 
-	return (
-		<div>
-			Color:
-			{colorButtons}
-		</div>
-	);
+  return (
+    <div>
+      Color:
+      {colorButtons}
+    </div>
+  );
 };
 
 export default ColorBtn;
