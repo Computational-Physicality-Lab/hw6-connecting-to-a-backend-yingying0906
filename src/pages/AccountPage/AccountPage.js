@@ -32,11 +32,12 @@ const handleSignIn = (setLoading, navigate) => {
     });
 };
 
-const handleSignOut = (e) => {
+const handleSignOut = (navigate) => {
   if (window.confirm("Are you sure you want to log out?")) {
     signOut(auth)
       .then(() => {
         console.log("signed out");
+        navigate("/");
       })
       .catch((error) => {});
   }
@@ -53,7 +54,11 @@ const AccountPage = () => {
       ) : (
         <>
           {authUser ? (
-            <Button outline color="secondary" onClick={handleSignOut}>
+            <Button
+              outline
+              color="secondary"
+              onClick={() => handleSignOut(navigate)}
+            >
               <span>Log out as {authUser.displayName}</span>
             </Button>
           ) : (

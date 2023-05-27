@@ -19,7 +19,6 @@ const SearchSection = (props) => {
     setCurrentChoose,
     search,
     setSearch,
-    pictureProductState,
     setPictureProductState,
     searchPage,
     setSearchPage,
