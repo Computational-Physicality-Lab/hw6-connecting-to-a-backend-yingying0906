@@ -7,7 +7,7 @@ This is the starter code of [2023-Programming User Interface Homework](https://h
 
 # 姓名
 - 羅寶瑩
-- Po Ying,Law
+- Po Ying, Law
 
 # 實作的網站
 > 你 deploy 的網站連結
@@ -25,7 +25,8 @@ N/A
 ### Display More
 - The `Display More` button is shown whenever there are search results in the "CREATE FROM PICTURE" section.
 - Clicking the "Display More" button will display 10 new images.
-![](https://hackmd.io/_uploads/B1bzdvkLh.gif)
+![1685186550539](https://github.com/Computational-Physicality-Lab/hw6-connecting-to-a-backend-yingying0906/assets/30721578/7b2b5871-80a7-4be8-81cd-c65562ddb89e)
+
 
 
 # 連結後端
@@ -36,7 +37,8 @@ N/A
     - Difficulty: Understanding the usage.
 2. Database
 - Method: The database was implemented using Firebase's Firestore database. Firstly, a "users" collection was created, and within it, a new collection was created for each user based on their UID to ensure that each user has their own shopping cart contents. Then, a new collection is created each time an item is added to the cart to store the details of the purchased item (e.g., color, size, quantity, etc.). For display purposes, a listener is used to monitor changes in the database and update the shopping cart display in real time.
-- Difficulty: Besides taking some time to understand how to use Firestore functions, understanding the structure of Firestore was also a challenge.
+- Difficulty: Besides taking some time to understand how to use Firestore functions, understanding the structure of Firestore database was also a challenge.
 
-# (加分)你實作的網站中與提出的作業規範不同之處，並請提出你的理由。另外，想要針對作業提出的規範作調整前請先與助教聯繫。
+# 不同之處
+> (加分)你實作的網站中與提出的作業規範不同之處，並請提出你的理由。另外，想要針對作業提出的規範作調整前請先與助教聯繫。
 N/A
