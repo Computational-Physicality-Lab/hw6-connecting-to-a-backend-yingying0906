@@ -36,8 +36,8 @@ N/A
     - Method: Firebase's authentication feature was used to implement the login system.
     - Difficulty: Understanding the usage.
 2. Database
-- Method: The database was implemented using Firebase's Firestore database. Firstly, a "users" collection was created, and within it, a new collection was created for each user based on their UID to ensure that each user has their own shopping cart contents. Then, a new collection is created each time an item is added to the cart to store the details of the purchased item (e.g., color, size, quantity, etc.). For display purposes, a listener is used to monitor changes in the database and update the shopping cart display in real time.
-- Difficulty: Besides taking some time to understand how to use Firestore functions, understanding the structure of Firestore database was also a challenge.
+    - Method: The database was implemented using Firebase's Firestore database. Firstly, a "users" collection was created, and within it, a new collection was created for each user based on their UID to ensure that each user has their own shopping cart contents. Then, a new collection is created each time an item is added to the cart to store the details of the purchased item (e.g., color, size, quantity, etc.). For display purposes, a listener is used to monitor changes in the database and update the shopping cart display in real time.
+    - Difficulty: Besides taking some time to understand how to use Firestore functions, understanding the structure of Firestore database was also a challenge.
 
 # 不同之處
 > (加分)你實作的網站中與提出的作業規範不同之處，並請提出你的理由。另外，想要針對作業提出的規範作調整前請先與助教聯繫。
