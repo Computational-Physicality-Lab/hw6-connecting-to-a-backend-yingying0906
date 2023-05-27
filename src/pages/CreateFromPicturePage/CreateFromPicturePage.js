@@ -16,6 +16,8 @@ const CreateFromPicturePage = () => {
     setCurrentChoose,
     searchPage,
     setSearchPage,
+    searchResultsName,
+    setSearchResultsName,
   } = useContext(PictureProductContext);
 
   const propsSend = {
@@ -29,6 +31,8 @@ const CreateFromPicturePage = () => {
     setPictureProductState,
     searchPage,
     setSearchPage,
+    searchResultsName,
+    setSearchResultsName,
   };
   return (
     <div className="CreateFromPicturePage">

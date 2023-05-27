@@ -18,6 +18,7 @@ export const PictureProductProvider = ({ children }) => {
 
   // search result
   const [searchResults, setSearchResults] = useState([]);
+  const [searchResultsName, setSearchResultsName] = useState("");
   const [currentChoose, setCurrentChoose] = useState(null);
   const [searchPage, setSearchPage] = useState(1);
 
@@ -32,6 +33,8 @@ export const PictureProductProvider = ({ children }) => {
         setCurrentChoose,
         searchPage,
         setSearchPage,
+        searchResultsName,
+        setSearchResultsName,
       }}
     >
       {children}

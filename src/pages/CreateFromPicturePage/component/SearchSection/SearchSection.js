@@ -23,12 +23,15 @@ const SearchSection = (props) => {
     setPictureProductState,
     searchPage,
     setSearchPage,
+    searchResultsName,
+    setSearchResultsName,
   } = props.props;
 
   const [loading, setLoading] = React.useState(false);
 
   const getUnsplashData = async () => {
     setLoading(true);
+    setSearchResultsName(search);
     const unsplash = createApi({
       accessKey: "WV2ZaL8ZzAhu2KnraViJqprlM1EEDqQBxafXNI43Wv8",
     });
@@ -46,17 +49,10 @@ const SearchSection = (props) => {
         const urls = [];
 
         if (result.response.results.length === 0) {
-          setPictureProductState({
-            ...pictureProductState,
-            name: "Scotty",
-          });
+          setSearchResultsName("");
         } else {
           result.response.results.map((result) => urls.push(result.urls.small));
           setSearchResults((prev) => [...prev, ...urls]);
-          setPictureProductState({
-            ...pictureProductState,
-            name: search,
-          });
           setSearchPage((prev) => prev + 1);
         }
       }
@@ -70,10 +66,6 @@ const SearchSection = (props) => {
   const handleSubmit = async (e) => {
     if (search === "") {
       alert("Please enter something");
-      setPictureProductState({
-        ...pictureProductState,
-        name: "Scotty",
-      });
       return;
     }
     e.preventDefault();
@@ -114,7 +106,13 @@ const SearchSection = (props) => {
             <Button
               id={index}
               key={index}
-              onClick={() => setCurrentChoose(scotty)}
+              onClick={() => {
+                setCurrentChoose(scotty);
+                setPictureProductState((prev) => ({
+                  ...prev,
+                  name: "Scotty",
+                }));
+              }}
             >
               <img src={scotty} alt="scotty" />
             </Button>
@@ -124,7 +122,13 @@ const SearchSection = (props) => {
             <Button
               id={index}
               key={index}
-              onClick={() => setCurrentChoose(result)}
+              onClick={() => {
+                setCurrentChoose(result);
+                setPictureProductState((prev) => ({
+                  ...prev,
+                  name: searchResultsName,
+                }));
+              }}
             >
               <img src={result} alt="scotty" />
             </Button>
