@@ -18,6 +18,10 @@
   justify-content: center;
   margin-bottom: 10px;
 }
+.search input[type="text"] {
+  vertical-align: bottom;
+}
+
 .searchImages {
   display: flex;
   flex-direction: row;
