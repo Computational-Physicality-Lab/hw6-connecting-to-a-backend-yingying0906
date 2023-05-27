@@ -88,7 +88,7 @@ const SearchSection = (props) => {
           className="form-control"
         />
         <Button type="submit" onClick={handleSubmit} color="secondary">
-          Submit
+          Search
         </Button>
       </div>
 
