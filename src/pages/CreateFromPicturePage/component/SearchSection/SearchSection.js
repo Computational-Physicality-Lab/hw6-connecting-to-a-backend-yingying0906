@@ -1,6 +1,7 @@
 import "./SearchSection.css";
 import React from "react";
 import { Button } from "reactstrap";
+import { Spinner } from "reactstrap";
 
 import scotty_1 from "../../../../assets/images/scotty.png";
 import scotty_2 from "../../../../assets/images/scotty-2.png";
@@ -24,7 +25,10 @@ const SearchSection = (props) => {
     setSearchPage,
   } = props.props;
 
+  const [loading, setLoading] = React.useState(false);
+
   const getUnsplashData = async () => {
+    setLoading(true);
     const unsplash = createApi({
       accessKey: "WV2ZaL8ZzAhu2KnraViJqprlM1EEDqQBxafXNI43Wv8",
     });
@@ -56,8 +60,10 @@ const SearchSection = (props) => {
           setSearchPage((prev) => prev + 1);
         }
       }
+      setLoading(false);
     } catch (err) {
       console.log(err);
+      setLoading(false);
     }
   };
 
@@ -101,25 +107,29 @@ const SearchSection = (props) => {
       )}
 
       <div className="searchImages">
-        {searchResults.length === 0
-          ? scotties.map((scotty, index) => (
-              <Button
-                id={index}
-                key={index}
-                onClick={() => setCurrentChoose(scotty)}
-              >
-                <img src={scotty} alt="scotty" />
-              </Button>
-            ))
-          : searchResults.slice(0, 10 * searchPage).map((result, index) => (
-              <Button
-                id={index}
-                key={index}
-                onClick={() => setCurrentChoose(result)}
-              >
-                <img src={result} alt="scotty" />
-              </Button>
-            ))}
+        {loading ? (
+          <Spinner color="danger" />
+        ) : searchResults.length === 0 ? (
+          scotties.map((scotty, index) => (
+            <Button
+              id={index}
+              key={index}
+              onClick={() => setCurrentChoose(scotty)}
+            >
+              <img src={scotty} alt="scotty" />
+            </Button>
+          ))
+        ) : (
+          searchResults.slice(0, 10 * searchPage).map((result, index) => (
+            <Button
+              id={index}
+              key={index}
+              onClick={() => setCurrentChoose(result)}
+            >
+              <img src={result} alt="scotty" />
+            </Button>
+          ))
+        )}
       </div>
 
       {searchResults.length !== 0 && (
