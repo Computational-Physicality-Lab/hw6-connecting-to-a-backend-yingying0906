@@ -18,8 +18,10 @@
   justify-content: center;
   margin-bottom: 10px;
 }
-.search input[type="text"] {
-  vertical-align: bottom;
+.searchForm input {
+  display: inline-block;
+  position: relative;
+  width: 400px;
 }
 
 .searchImages {
