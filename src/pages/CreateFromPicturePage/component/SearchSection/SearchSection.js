@@ -74,6 +74,20 @@ const SearchSection = (props) => {
     getUnsplashData();
   };
 
+  // scroll
+  const scrollableRef = React.useRef(null);
+
+  React.useEffect(() => {
+    scrollToBottom();
+  });
+
+  const scrollToBottom = () => {
+    if (scrollableRef.current) {
+      const scrollableElement = scrollableRef.current;
+      scrollableElement.scrollTop = scrollableElement.scrollHeight;
+    }
+  };
+
   return (
     <div className="searchSection">
       <div className="searchForm">
@@ -97,7 +111,7 @@ const SearchSection = (props) => {
         </h2>
       )}
 
-      <div className="searchImages">
+      <div className="searchImages" ref={scrollableRef}>
         {loading ? (
           <Spinner color="danger" />
         ) : searchResults.length === 0 ? (
