@@ -37,15 +37,27 @@ const SearchSection = (props) => {
         orientation: "portrait",
       });
 
+      console.log(result);
       if (result.type === "success") {
         const urls = [];
-        result.response.results.map((result) => urls.push(result.urls.small));
-        setSearchResults((prev) => [...prev, ...urls]);
-        setSearchPage((prev) => prev + 1);
+
+        if (result.response.results.length === 0) {
+          setPictureProductState({
+            ...pictureProductState,
+            name: "Scotty",
+          });
+        } else {
+          result.response.results.map((result) => urls.push(result.urls.small));
+          setSearchResults((prev) => [...prev, ...urls]);
+          setPictureProductState({
+            ...pictureProductState,
+            name: search,
+          });
+          setSearchPage((prev) => prev + 1);
+        }
       }
     } catch (err) {
       console.log(err);
-      alert("no more pictures");
     }
   };
 
@@ -58,25 +70,11 @@ const SearchSection = (props) => {
       });
       return;
     }
-
     e.preventDefault();
 
-    // new search
     setSearchPage(1);
     setSearchResults([]);
     getUnsplashData();
-    if (searchResults.length === 0) {
-      setPictureProductState({
-        ...pictureProductState,
-        name: "Scotty",
-      });
-      return;
-    } else {
-      setPictureProductState({
-        ...pictureProductState,
-        name: search,
-      });
-    }
   };
 
   return (
